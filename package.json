@@ -15,14 +15,15 @@
   "license": "ISC",
   "husky": {
     "hooks": {
-      "pre-commit": "npm test", 
+      "pre-commit": "npm test",
       "pre-push": "npm test",
       "...": "..."
     }
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",

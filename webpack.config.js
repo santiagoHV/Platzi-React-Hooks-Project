@@ -6,15 +6,16 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
     },
     resolve: {
-        extensions: ['.js']
+        extensions: ['.js','.jsx']
     },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/, 
                 use: {
                     loader: 'babel-loader',
@@ -51,6 +52,7 @@ module.exports = {
     devServer: {
         static: path.join(__dirname, 'dist'),
         compress: true,
-        port: 3005
+        historyApiFallback: true,
+        port: 3005,
     }
 }
