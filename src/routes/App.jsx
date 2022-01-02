@@ -7,10 +7,14 @@ import Information from "../containers/Information";
 import NotFound from "../containers/NotFound";
 import Payment from "../containers/Payment";
 import Success from "../containers/Success";
+import AppContext from "../context/AppContext";
+import UseInitialState from "../hooks/UseInitialState";
 
 const App = () => {
+  const initialState = UseInitialState();
   return (
-    <BrowserRouter>
+    <AppContext.Provider value={initialState}>
+      <BrowserRouter>
         <Layout>
             <Switch>
                 <Route exact path="/" component={Home} />
@@ -21,7 +25,8 @@ const App = () => {
                 <Route component={NotFound} />
             </Switch>
         </Layout>
-    </BrowserRouter>
+      </BrowserRouter>
+    </AppContext.Provider>
   );
 };
 
